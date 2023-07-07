@@ -1,6 +1,5 @@
 flows:
   configuration:
-    runtime: concord-v2
     dependencies:
     - "mvn://org.python:jython-standalone:2.7.2"
 
