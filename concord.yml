@@ -1,4 +1,12 @@
 flows:
+  configuration:
+    runtime: concord-v2
+    dependencies:
+    - "mvn://org.python:jython-standalone:2.7.2"
+
+    arguments: 
+      myVar: "world"
+
   default:
   - log: "Hello Concord User from a modified workflow"
   
@@ -14,3 +22,12 @@ flows:
         - log: "All done!"
       else:
         - log: "You got a todo item: ${myTodo.content.title}"
+  
+  testingVars:
+    - script: python
+      body: |
+        x = 2 * 3;
+        execution.setVariable("result", x)
+
+    - log: ${result}
+
