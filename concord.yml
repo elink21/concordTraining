@@ -1,3 +1,16 @@
 flows:
   default:
   - log: "Hello Concord User from a modified workflow"
+  
+  httpFeature:
+    - task: http
+      in:
+        url: "https://jsonplaceholder.typicode.com/todos/${todoId}"
+        response: json
+        out: myTodo
+
+    - if: "${myTodo.content.completed}"
+      then:
+        - log: "All done!"
+      else:
+        - log: "You got a todo item: ${myTodo.content.title}"
