@@ -9,7 +9,7 @@ flows:
   - log: "Hello Concord User from a modified workflow"
 
   githubTriggered:
-  - log: "The github event was triggered"
+  - log: "Something was pushed"
 
   cronTask:
     - log: "Just printing something with a minute base"
@@ -43,6 +43,7 @@ triggers:
   - github:
       entryPoint: githubTriggered
       conditions:
-        type: star
+        type: push
+        branch: "master"
 
     
