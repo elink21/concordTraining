@@ -7,7 +7,10 @@ configuration:
 flows:
   default:
   - log: "Hello Concord User from a modified workflow"
-  
+
+  cronTask:
+    - log: "Just printing something with a minute base"
+
   httpFeature:
     - task: http
       in:
@@ -29,3 +32,7 @@ flows:
 
     - log: ${result}
 
+triggers:
+  - cron: 
+    spec: "* * * * *"
+    entryPoint: cronTask
