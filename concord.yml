@@ -8,6 +8,9 @@ flows:
   default:
   - log: "Hello Concord User from a modified workflow"
 
+  githubTriggered:
+  - log: "The github event was triggered"
+
   cronTask:
     - log: "Just printing something with a minute base"
 
@@ -36,3 +39,10 @@ triggers:
   - cron: 
       spec: "* * * * *"
       entryPoint: cronTask
+      
+  - github:
+    entryPoint: githubTriggered
+    conditions:
+      type: star
+
+    
