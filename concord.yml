@@ -41,9 +41,9 @@ triggers:
       entryPoint: cronTask
 
   - github:
-      entryPoint: githubTriggered
+      entryPoint: "githubTriggered"
       conditions:
-        type: push
+        type: "push"
         branch: "master"
 
     
