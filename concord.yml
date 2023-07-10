@@ -34,5 +34,5 @@ flows:
 
 triggers:
   - cron: 
-    spec: "* * * * *"
-    entryPoint: cronTask
+      spec: "* * * * *"
+      entryPoint: cronTask
