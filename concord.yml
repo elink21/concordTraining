@@ -39,10 +39,10 @@ triggers:
   - cron: 
       spec: "* * * * *"
       entryPoint: cronTask
-      
+
   - github:
-    entryPoint: githubTriggered
-    conditions:
-      type: star
+      entryPoint: githubTriggered
+      conditions:
+        type: star
 
     
