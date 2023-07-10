@@ -44,6 +44,4 @@ triggers:
       entryPoint: "githubTriggered"
       conditions:
         type: "push"
-        branch: "master"
-
     
