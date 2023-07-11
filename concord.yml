@@ -8,12 +8,7 @@ flows:
   default:
   - log: "Hello Concord User from a modified workflow"
 
-  dockertask:
-  - task: docker
-    in:
-      image: library/alpine
-      cmd: echo '${greeting}'
-    out: dockerResult
+  
 
   githubTriggered:
   - log: "Something was pushed"
