@@ -34,6 +34,13 @@ flows:
         execution.setVariable("result", x)
 
     - log: ${result}
+  
+  testingDocker:
+    - task: docker
+      in:
+        image: liquidbase/liquidbase
+        cmd: liquidbase --version
+      out: dockerResult
 
 triggers:
   - cron: 
