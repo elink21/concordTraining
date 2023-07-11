@@ -35,12 +35,13 @@ flows:
 
     - log: ${result}
   
-  testingDocker:
+  dockertask:
     - task: docker
       in:
-        image: liquibase/liquibase
-        cmd: echo 'something'
+        image: library/alpine
+        cmd: echo '${greeting}'
       out: dockerResult
+
 
 triggers:
   - cron: 
