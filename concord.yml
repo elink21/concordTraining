@@ -35,12 +35,12 @@ flows:
 
     - log: ${result}
   
-  # testingDocker:
-  #   - task: docker
-  #     in:
-  #       image: liquidbase/liquidbase
-  #       cmd: liquidbase --version
-  #     out: dockerResult
+  testingDocker:
+    - task: docker
+      in:
+        image: liquibase/liquibase
+        cmd: liquibase --version
+      out: dockerResult
 
 triggers:
   - cron: 
