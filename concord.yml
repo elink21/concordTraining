@@ -39,7 +39,7 @@ flows:
     - task: docker
       in:
         image: liquibase/liquibase
-        cmd: liquibase --version
+        cmd: echo 'something'
       out: dockerResult
 
 triggers:
